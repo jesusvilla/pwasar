@@ -1,0 +1,31 @@
+{
+  "name": "pwasar",
+  "version": "1.0.0",
+  "description": "A Quasar Framework app",
+  "productName": "Pwasar",
+  "cordovaId": "org.cordova.quasar.app",
+  "author": "Jesús Villanueva",
+  "private": true,
+  "scripts": {
+    "build:mat": "quasar build -m pwa -t mat",
+    "build:ios": "quasar build -m pwa -t ios",
+    "build": "npm run build:mat",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue-i18n": "^7.3.3"
+  },
+  "devDependencies": {
+    "quasar-cli": "^0.15.14"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
+}

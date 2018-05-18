@@ -1,0 +1,51 @@
+<q-layout view="lHh Lpr lFf">
+    <q-layout-header>
+      <q-toolbar
+        color="primary"
+      >
+        <q-btn
+          flat
+          dense
+          round
+          @click="leftDrawerOpen = !leftDrawerOpen"
+          aria-label="Menu"
+        >
+          <q-icon name="menu" />
+        </q-btn>
+
+        <q-toolbar-title>
+          Quasar App
+          <div slot="subtitle">Jesús - Quasar v{{ $q.version }}</div>
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-layout-header>
+
+    <q-layout-drawer
+      v-model="leftDrawerOpen"
+      :content-class="$q.theme === 'mat' ? null : null"
+    >
+      <q-list
+        link
+        inset-delimiter
+        class="md-nav"
+      >
+        <q-list-header class="md-nav-header">
+          <div class="caption">Colegio</div>
+          <div class="row flex-center">
+              <q-item>
+                <q-item-side avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1gJrTqXMz_DO0hDOyo2cMMJ76hmIfrTMA5mCalphghLhxkTj">
+                </q-item-side>
+              </q-item>
+          </div>
+        </q-list-header>
+        <q-item @click.native="openURL(item.url)" v-for="(item, index) in arrUrl" :key="index">
+          <q-item-side :icon="item.icon" />
+          <q-item-main :label="item.label" :sublabel="item.sublabel" />
+        </q-item>
+      </q-list>
+    </q-layout-drawer>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+  </q-layout>
