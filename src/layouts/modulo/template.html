@@ -29,15 +29,35 @@
         inset-delimiter
         class="md-nav"
       >
-        <q-list-header class="md-nav-header">
-          <div class="caption">Colegio</div>
-          <div class="row flex-center">
-              <q-item>
-                <q-item-side avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1gJrTqXMz_DO0hDOyo2cMMJ76hmIfrTMA5mCalphghLhxkTj">
-                </q-item-side>
-              </q-item>
+        <q-list-header class="md-nav-header column">
+          <div class="row flex-center col-grow">
+            <img class="md-nav-avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1gJrTqXMz_DO0hDOyo2cMMJ76hmIfrTMA5mCalphghLhxkTj" />
           </div>
+          <div class="caption">Colegio</div>
         </q-list-header>
+        <q-item>
+          <q-item-side icon="home" />
+          <q-item-main label="Inicio" />
+        </q-item>
+        <q-collapsible
+          class="md-nav-collapsible"
+          icon="mail"
+          label="Mensajeria"
+          popup
+        >
+          <q-item link>
+            <q-item-side icon="home" />
+            <q-item-main label="Recibidos" />
+          </q-item>
+          <q-item link>
+            <q-item-side icon="home" />
+            <q-item-main label="Enviados" />
+          </q-item>
+          <q-item link>
+            <q-item-side icon="home" />
+            <q-item-main label="Papelera" />
+          </q-item>
+        </q-collapsible>
         <q-item @click.native="openURL(item.url)" v-for="(item, index) in arrUrl" :key="index">
           <q-item-side :icon="item.icon" />
           <q-item-main :label="item.label" :sublabel="item.sublabel" />

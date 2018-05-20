@@ -7,6 +7,9 @@
   "author": "Jesús Villanueva",
   "private": true,
   "scripts": {
+    "dev:mat": "quasar dev -m pwa -t mat",
+    "dev:ios": "quasar dev -m pwa -t ios",
+    "dev": "npm run dev:mat",
     "build:mat": "quasar build -m pwa -t mat",
     "build:ios": "quasar build -m pwa -t ios",
     "build": "npm run build:mat",

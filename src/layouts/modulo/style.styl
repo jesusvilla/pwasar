@@ -1,16 +1,40 @@
 @import '~variables'
-$height-nav-header = 60px
+$height-nav-header = 150px
 
 .md-nav {
     padding: 0
     border: none
     .md-nav-header {
-        // height: $height-nav-header
+        height: $height-nav-header
         background-color: $primary
         padding: 10px 15px
+        box-sizing: border-box
     }
     .caption {
         color: #ffffff
         font-weight: 500
+    }
+    .md-nav-avatar {
+        height: 65px
+        border-radius: 50%
+    }
+    .q-collapsible-sub-item {
+        padding: 0
+    }
+    .md-nav-collapsible {
+        padding: 0
+        &.q-collapsible-closed .q-collapsible-inner {
+            border: none
+        }
+        &.q-collapsible-opened .q-collapsible-inner {
+            box-shadow: none
+            border: 1px solid #e0e0e0
+        }
+    }
+    .q-item-icon {
+        color: $primary
+    }
+    .q-collapsible-toggle-icon {
+        color: $secondary
     }
 }
