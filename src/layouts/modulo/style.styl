@@ -1,9 +1,17 @@
 @import '~variables'
 $height-nav-header = 150px
 
+.slide-aux {
+    animation-duration: 0.35s
+    animation-fill-mode: both
+}
+
 .md-nav {
     padding: 0
     border: none
+    > .q-list, > span > .q-list {
+        border: none
+    }
     .md-nav-header {
         border: none
         line-height: initial
@@ -42,5 +50,28 @@ $height-nav-header = 150px
     }
     .q-collapsible-toggle-icon {
         color: $secondary
+    }
+
+    .slide {
+        /*&-enter-active,
+        &-leave-active {
+            // @extend .slide-aux
+            animation-name: fadeInDown
+        }
+        &-enter,
+        &-leave-to {
+            @extend .slide-aux
+            animation-name: fadeOutUp
+        }*/
+        &-enter-active,
+        &-leave-active {
+            // transition: all .3s ease-out
+            transition: opacity .25s ease-out
+        }
+        &-enter,
+        &-leave-to {
+            // transform: translateY(50%)
+            opacity: 0
+        }
     }
 }

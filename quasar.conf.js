@@ -18,10 +18,6 @@ module.exports = function (ctx) {
       // 'fontawesome'
     ],
     supportIE: true,
-    vendor: {
-      add: [],
-      remove: []
-    },
     build: {
       scopeHoisting: true,
       vueRouterMode: 'history',
@@ -55,7 +51,8 @@ module.exports = function (ctx) {
         'QCollapsible',
         'QItem',
         'QItemMain',
-        'QItemSide'
+        'QItemSide',
+        'QSlideTransition'
       ],
       directives: [
         'Ripple'
@@ -66,10 +63,8 @@ module.exports = function (ctx) {
       ]
     },
     // animations: 'all' --- includes all animations
-    animations: [
-    ],
+    animations: 'all',
     pwa: {
-      cacheExt: 'js,html,css,ttf,eot,otf,woff,woff2,json,svg,gif,jpg,jpeg,png,wav,ogg,webm,flac,aac,mp4,mp3',
       manifest: {
         // name: 'Quasar App',
         // short_name: 'Quasar-PWA',

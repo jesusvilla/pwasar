@@ -35,35 +35,53 @@
           <div class="caption">Colegio</div>
           <q-collapsible label="Usuario" class="md-nav-collapsible" v-model="estadoUsuario" />
         </q-list-header>
-        <template v-if="!estadoUsuario">
-          <q-item>
-            <q-item-side icon="home" />
-            <q-item-main label="Inicio" />
-          </q-item>
-          <q-collapsible
-            class="md-nav-collapsible"
-            icon="mail"
-            label="Mensajeria"
-            popup
-          >
-            <q-item link>
+        <transition
+          appear
+          name="slide"
+          mode="out-in"
+        >
+          <q-list v-if="!estadoUsuario" key="menu">
+            <q-item>
               <q-item-side icon="home" />
-              <q-item-main label="Recibidos" />
+              <q-item-main label="Inicio" />
             </q-item>
-            <q-item link>
-              <q-item-side icon="home" />
-              <q-item-main label="Enviados" />
+            <q-collapsible
+              class="md-nav-collapsible"
+              icon="mail"
+              label="Mensajeria"
+              popup
+            >
+              <q-item link>
+                <q-item-side icon="home" />
+                <q-item-main label="Recibidos" />
+              </q-item>
+              <q-item link>
+                <q-item-side icon="home" />
+                <q-item-main label="Enviados" />
+              </q-item>
+              <q-item link>
+                <q-item-side icon="home" />
+                <q-item-main label="Papelera" />
+              </q-item>
+            </q-collapsible>
+            <q-item @click.native="openURL(item.url)" v-for="(item, index) in arrUrl" :key="index">
+              <q-item-side :icon="item.icon" />
+              <q-item-main :label="item.label" :sublabel="item.sublabel" />
             </q-item>
-            <q-item link>
-              <q-item-side icon="home" />
-              <q-item-main label="Papelera" />
-            </q-item>
-          </q-collapsible>
-          <q-item @click.native="openURL(item.url)" v-for="(item, index) in arrUrl" :key="index">
-            <q-item-side :icon="item.icon" />
-            <q-item-main :label="item.label" :sublabel="item.sublabel" />
-          </q-item>
-        </template>
+          </q-list>
+          <q-list v-else key="usuarios">
+            Hola
+          </q-list>
+        </transition>
+        <!--<transition
+        appear
+        enter-active-class="animated fadeInDownBig"
+        leave-active-class="animated fadeOutUpBig"
+        >
+          <q-list v-if="estadoUsuario">
+            Hola
+          </q-list>
+        </transition>-->
       </q-list>
     </q-layout-drawer>
 
