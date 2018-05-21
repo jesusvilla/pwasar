@@ -8,7 +8,8 @@ export default {
       arrUrl: [
         {url: 'http://quasar-framework.org', icon: 'school', label: 'Docs', sublabel: 'quasar-framework.org'},
         {url: 'https://github.com/quasarframework/', icon: 'code', label: 'GitHub', sublabel: 'github.com/quasarframework'}
-      ]
+      ],
+      estadoUsuario: false
     }
   },
   methods: {

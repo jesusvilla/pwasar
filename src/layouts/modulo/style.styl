@@ -5,10 +5,16 @@ $height-nav-header = 150px
     padding: 0
     border: none
     .md-nav-header {
+        border: none
+        line-height: initial
         height: $height-nav-header
         background-color: $primary
-        padding: 10px 15px
+        padding: 0px 15px
         box-sizing: border-box
+        > .md-nav-collapsible .q-item {
+            padding: 0
+            color: #ffffff
+        }
     }
     .caption {
         color: #ffffff
