@@ -1,5 +1,5 @@
-<q-layout view="lHh Lpr lFf">
-    <q-layout-header>
+<q-layout view="lHh Lpr lff">
+    <q-layout-header class="no-shadow" reveal>
       <q-toolbar
         color="primary"
       >
@@ -14,8 +14,7 @@
         </q-btn>
 
         <q-toolbar-title>
-          Quasar App
-          <div slot="subtitle">Jesús - Quasar v{{ $q.version }}</div>
+          App
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
@@ -64,13 +63,43 @@
                 <q-item-main label="Papelera" />
               </q-item>
             </q-collapsible>
-            <q-item @click.native="openURL(item.url)" v-for="(item, index) in arrUrl" :key="index">
-              <q-item-side :icon="item.icon" />
-              <q-item-main :label="item.label" :sublabel="item.sublabel" />
+            <q-item>
+              <q-item-side icon="event" />
+              <q-item-main label="Agenda" />
             </q-item>
+            <q-collapsible
+              class="md-nav-collapsible"
+              icon="mail"
+              label="Aula"
+              popup
+            >
+              <q-item link>
+                <q-item-side icon="home" />
+                <q-item-main label="Clase" />
+              </q-item>
+              <q-item link>
+                <q-item-side icon="home" />
+                <q-item-main label="Horario" />
+              </q-item>
+              <q-item link>
+                <q-item-side icon="home" />
+                <q-item-main label="Silabus" />
+              </q-item>
+            </q-collapsible>
           </q-list>
           <q-list v-else key="usuarios">
-            Hola
+            <q-item>
+              <q-item-side letter="M" inverted color="blue" />
+              <q-item-main label="Maria Rivera Flores" />
+            </q-item>
+            <q-item>
+              <q-item-side letter="J" inverted color="pink" />
+              <q-item-main label="Joan Alonso Murillo" />
+            </q-item>
+            <q-item>
+              <q-item-side letter="+" color="gray" />
+              <q-item-main label="Añadir cuenta" />
+            </q-item>
           </q-list>
         </transition>
         <!--<transition
@@ -88,4 +117,10 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-layout-footer>
+      <q-toolbar>
+        Empresa SAC
+      </q-toolbar>
+    </q-layout-footer>
   </q-layout>

@@ -1,4 +1,40 @@
-<q-page class="flex flex-center">
-    Empresa
-    <!--<img alt="Quasar logo" src="~assets/quasar-logo-full.svg">-->
+<q-page>
+    <q-layout-header>
+        <q-tabs class="shadow-1">
+            <q-tab default slot="title" name="todo" icon="apps" label="Todos" />
+            <q-tab slot="title" name="boletin" icon="list_alt" label="Boletines" />
+            <q-tab count="4" slot="title" name="mensaje" icon="email" label="Mensajes" />
+            <q-tab slot="title" name="contenido" icon="web" label="Contenidos" />
+        </q-tabs>
+    </q-layout-header>
+    <q-list separator>
+        <q-item>
+            <q-item-side icon="email" inverted color="amber" />
+            <q-item-main label="prueba 456789" sublabel="SIE" />
+        </q-item>
+        <q-item>
+            <q-item-side icon="email" inverted color="amber" />
+            <q-item-main label="mensaje de prueba 19-04" sublabel="SIE" />
+        </q-item>
+        <q-item>
+            <q-item-side icon="web" inverted color="blue" />
+            <q-item-main label="prueba examen simula (Examen)" />
+        </q-item>
+        <q-item>
+            <q-item-side icon="list_alt" inverted color="deep-orange" />
+            <q-item-main label="prueba circular" />
+        </q-item>
+        <q-item>
+            <q-item-side icon="web" inverted color="blue" />
+            <q-item-main label="enlace" />
+        </q-item>
+        <q-item>
+            <q-item-side icon="web" inverted color="blue" />
+            <q-item-main label="material" />
+        </q-item>
+        <q-item>
+            <q-item-side icon="email" inverted color="amber" />
+            <q-item-main label="prueba 456789" sublabel="SIE" />
+        </q-item>
+    </q-list>
 </q-page>

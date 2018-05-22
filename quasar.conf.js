@@ -52,7 +52,10 @@ module.exports = function (ctx) {
         'QItem',
         'QItemMain',
         'QItemSide',
-        'QSlideTransition'
+        'QSlideTransition',
+        'QTabs',
+        'QTab',
+        'QLayoutFooter'
       ],
       directives: [
         'Ripple'

@@ -1,7 +1,6 @@
 import { openURL } from 'quasar'
 
 export default {
-  name: 'Modulo',
   data () {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop,
